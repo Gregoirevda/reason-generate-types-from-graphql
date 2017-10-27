@@ -5,8 +5,12 @@ const {graphqlIntrospectionQuery} = require('./graphql');
 if(!process.argv)
   throw new Error('reason-generate-types-from-graphql should run in a NodeJS process');
 
-if(process.argv.length !== 3)
-  throw new Error('reason-generate-types-from-graphql should have 1 parameter: the url of the remote server');
+if(process.argv.length !== 3) {
+  throw new Error(`
+    reason-generate-types-from-graphql should have 1 parameter: the url of the remote server
+    Example: reason-generate-types-from-graphql "http://www.your-url/graphql"
+  `);
+}
 
 (function() {
   const url = process.argv[2];

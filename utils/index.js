@@ -7,7 +7,6 @@ exports.getSchema = body => {
 };
 
 exports.getTypes = schema => schema.types;
-
 exports.typesOfkindObject = type => {
   return type.kind === 'OBJECT';
 };
